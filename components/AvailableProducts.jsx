@@ -2,15 +2,22 @@
 import Title from "./Title";
 import ProductCard from "./ProductCard";
 import { useSelector } from "react-redux";
+import { useParams } from "next/navigation";
 
-const BestSelling = () => {
+const AvailableProducts = () => {
+  const { categoryId } = useParams();
+
   const displayQuantity = 8;
-  const products = useSelector((state) => state.product.list);
+  const productsAll = useSelector((state) => state.product.list);
+
+  const products = categoryId
+    ? productsAll.filter((product) => product.category === categoryId)
+    : productsAll;
 
   return (
-    <div className="px-6 my-10 max-w-6xl mx-auto">
+    <div className="px-6 my-5 max-w-6xl mx-auto">
       <Title
-        title="Các cây đẹp nhất"
+        title="Các cây có sẵn"
         description={`Hiển thị ${products.length < displayQuantity ? products.length : displayQuantity} trên ${products.length} cây`}
         href="/shop"
       />
@@ -23,4 +30,4 @@ const BestSelling = () => {
   );
 };
 
-export default BestSelling;
+export default AvailableProducts;

@@ -638,8 +638,9 @@ export const dummyAdminDashboardData = {
 };
 
 export const dummyStoreDashboardData = {
-  ratings: dummyRatingsData,
   totalOrders: 2,
   totalEarnings: 636,
   totalProducts: 5,
+  totalViewsToday: 100,
+  totalCategories: 3,
 };

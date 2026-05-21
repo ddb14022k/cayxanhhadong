@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
+import BrandName from "./BrandName";
 
 const Navbar = () => {
   const router = useRouter();
@@ -22,22 +23,7 @@ const Navbar = () => {
     <nav className="relative bg-white">
       <div className="mx-6">
         <div className="flex items-center justify-between max-w-7xl mx-auto py-4  transition-all">
-          <Link
-            href="/"
-            className="relative text-4xl font-semibold text-slate-700"
-          >
-            <div className="flex items-center gap-2">
-              <span className="text-green-600">
-                Cây Xanh
-                <br />
-                Chương Mỹ
-              </span>
-              <Image src={assets.tree_logo} alt="Tree Logo" className="w-15" />
-            </div>
-            <p className="absolute text-xs font-semibold -top-3 -right-8 px-3 p-0.5 rounded-full flex items-center gap-2 text-white bg-green-600">
-              Phục vụ 24/7
-            </p>
-          </Link>
+          <BrandName />
 
           {/* Desktop Menu */}
           <div className="hidden sm:flex items-center gap-4 lg:gap-8 text-slate-600">

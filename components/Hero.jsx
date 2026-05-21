@@ -8,7 +8,6 @@ import OutstandingCategory from "./OutstandingCategory";
 import { useSelector } from "react-redux";
 
 const Hero = () => {
-  const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || "$";
   const categories = useSelector((state) => state.categories.list);
 
   return (

@@ -9,7 +9,7 @@ const LatestCategories = () => {
   const categories = useSelector((state) => state.categories.list);
 
   return (
-    <div className="px-6 my-30 max-w-6xl mx-auto">
+    <div className="px-6 my-10 max-w-6xl mx-auto">
       <Title
         title="Cây công trình bán chạy"
         description={`Hiển thị ${categories.length < displayQuantity ? categories.length : displayQuantity} trên ${categories.length} cây`}
